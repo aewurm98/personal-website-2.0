@@ -1,0 +1,98 @@
+# Cursor Rules for Personal Website Project
+
+## Project Context
+Personal portfolio website built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion. Target audience: graduate school applications and tech industry job applications.
+
+## Architecture Standards
+- Next.js 14 with App Router (not Pages Router)
+- TypeScript strict mode enabled
+- Tailwind CSS with mobile-first responsive design
+- Framer Motion for animations and transitions
+- React Server Components where possible
+- Client Components only when needed (interactivity, hooks)
+
+## File Organization
+src/
+├── app/ (Next.js App Router structure)
+├── components/
+│   ├── ui/ (reusable UI components)
+│   ├── sections/ (page sections)
+│   └── layout/ (navigation, footer)
+├── lib/ (utilities, configurations)
+├── types/ (TypeScript definitions)
+└── data/ (content data files)
+
+## Code Standards
+- Use TypeScript interfaces for all props
+- Component names in PascalCase
+- File names in kebab-case or PascalCase for components  
+- Export components as default
+- Include JSDoc comments for complex functions
+- Use const assertions for readonly data
+- Implement proper error boundaries
+
+## Styling Guidelines
+- Tailwind utility classes only (no custom CSS unless absolutely necessary)
+- Mobile-first responsive design (sm:, md:, lg: breakpoints)
+- Consistent spacing using Tailwind's spacing scale
+- Dark mode support using Tailwind's dark: variants
+- Semantic color names (primary, secondary, accent)
+
+## Animation Standards
+- Use Framer Motion for all animations
+- Respect prefers-reduced-motion
+- Keep animations under 300ms for micro-interactions
+- Use transform and opacity for performance
+- Implement scroll-triggered animations for sections
+- Standard animation variants:
+  - fadeIn: opacity 0→1, y: 20→0
+  - slideIn: x: -20→0 or y: 20→0
+  - stagger: delay children by 0.1s
+
+## Performance Requirements
+- Use Next.js Image component for all images
+- Implement lazy loading for below-fold content
+- Optimize bundle size (check with @next/bundle-analyzer)
+- Maintain Lighthouse score 90+
+- Ensure Core Web Vitals compliance
+- Use React.memo for expensive components
+
+## Accessibility Standards
+- Semantic HTML structure
+- ARIA labels for interactive elements
+- Keyboard navigation support
+- Screen reader compatibility
+- Color contrast compliance (WCAG AA)
+- Focus indicators for all interactive elements
+- Alt text for all images
+
+## Content Structure
+- Hero: Professional headline, brief bio, CTA buttons
+- About: 150-200 words, technical background focus
+- Experience: Timeline format, achievement-focused
+- Skills: Grouped by category with proficiency indicators
+- Projects: Grid layout, filterable by technology
+- Contact: Functional form with validation
+
+## Component Patterns
+- Use React Hook Form + Zod for forms
+- Implement proper loading states
+- Error handling with user-friendly messages
+- Responsive image handling
+- Consistent button and link styles
+- Modal/dialog patterns for project details
+
+## Development Workflow
+- Commit frequently with descriptive messages
+- Run linting before commits
+- Test mobile responsiveness on actual devices
+- Validate forms and error states
+- Check performance with Lighthouse
+- Verify cross-browser compatibility
+
+## Security & Best Practices
+- Environment variables for API keys
+- Input sanitization for forms
+- HTTPS in production
+- CSP headers for security
+- No sensitive data in client-side code
