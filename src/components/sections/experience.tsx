@@ -21,15 +21,30 @@ export default function ExperienceSection() {
                     <div className="timeline-header">
                       <div>
                         <h4 className="timeline-title">{experience.position}</h4>
-                        <p className="timeline-company">{experience.company}</p>
-                        <p className="timeline-location">{experience.location}</p>
+                        <p className="timeline-company">
+                          {experience.companyUrl ? (
+                            <a href={experience.companyUrl} target="_blank" rel="noopener noreferrer">
+                              {experience.company}
+                            </a>
+                          ) : (
+                            experience.company
+                          )}
+                        </p>
+                        <div className="timeline-meta">
+                          <p className="timeline-location">{experience.location}</p>
+                          <p className="timeline-date">{experience.startDate} - {experience.current ? 'Present' : experience.endDate}</p>
+                        </div>
                       </div>
-                      <div className="timeline-date">
-                        <p>{experience.startDate} - {experience.current ? 'Present' : experience.endDate}</p>
-                        {experience.current && (
-                          <span className="status-tag">Current</span>
-                        )}
-                      </div>
+                      {experience.companyLogo && (
+                        <a 
+                          href={experience.companyUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="company-logo"
+                        >
+                          <img src={experience.companyLogo} alt={`${experience.company} logo`} />
+                        </a>
+                      )}
                     </div>
                     
                     <div className="timeline-description">

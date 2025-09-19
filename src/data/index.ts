@@ -6,6 +6,8 @@ export const siteConfig: SiteConfig = {
   author: 'Alex Wurm',
   url: 'https://alexwurm.com',
   email: 'alexwurm@stanford.edu',
+  phone: '+1 (914) 815-2447',
+  location: 'Stanford, CA',
   socialLinks: [
     {
       name: 'GitHub',
@@ -45,15 +47,22 @@ export const aboutData: AboutData = {
     'Precision Drug Discovery',
     'Internet of Medical Things'
   ],
-  education: {
-    degree: 'Master of Science in Computer Science',
-    school: 'Stanford University',
-    year: '2024'
-  },
+  education: [
+    {
+      degree: 'Master of Business Administration',
+      institution: 'Stanford Graduate School of Business',
+      year: '2027'
+    },
+    {
+      degree: 'Bachelor of Science, Chemical & Biomolecular Engineering',
+      institution: 'Cornell University',
+      year: '2020'
+    }
+  ],
   stats: [
     { value: '5+', label: 'Years Experience' },
     { value: '30+', label: 'Software Companies Evaluated' },
-    { value: '4,000+', label: 'Programming' },
+    { value: '4,000+', label: 'Programming Hours' },
     { value: '5', label: 'Board Advisor Roles' }
   ]
 };
@@ -61,47 +70,54 @@ export const aboutData: AboutData = {
 export const experiences: Experience[] = [
   {
     id: '1',
-    company: 'TechCorp Inc.',
-    position: 'Senior Software Engineer',
-    location: 'San Francisco, CA',
-    startDate: '2023-01',
-    endDate: '2024-06',
+    company: 'Serent Capital',
+    companyUrl: 'https://serentcapital.com',
+    companyLogo: '/images/serent.png',
+    position: 'Technology Investing Associate',
+    location: 'Austin, TX',
+    startDate: 'July 2023',
+    endDate: 'August 2025',
     current: false,
     description: [
-      'Led development of microservices architecture serving 1M+ users',
-      'Implemented CI/CD pipelines reducing deployment time by 60%',
-      'Mentored 3 junior developers and conducted code reviews'
+      'Evaluated 30+ enterprise software companies across healthcare IT, fintech, and vertical SaaS sectors',
+      'Built financial models and conducted market research to assess investment opportunities',
+      'Developed investment theses and presented findings to investment committee'
     ],
-    technologies: ['React', 'Node.js', 'Python', 'AWS', 'Docker', 'Kubernetes']
+    technologies: ['Financial Modeling', 'Market Research', 'Due Diligence', 'Investment Analysis']
   },
   {
     id: '2',
-    company: 'AI Startup',
-    position: 'Machine Learning Engineer',
-    location: 'Palo Alto, CA',
-    startDate: '2022-06',
-    endDate: '2022-12',
+    company: 'Voyage SMS',
+    companyUrl: 'https://voyagesms.com',
+    companyLogo: '/images/voyage.png',
+    position: 'Head of Growth | Product Manager',
+    location: 'Los Angeles, CA',
+    startDate: 'April 2022',
+    endDate: 'March 2023',
     current: false,
     description: [
-      'Developed computer vision models achieving 95% accuracy',
-      'Optimized model inference time by 40% using TensorRT',
-      'Collaborated with research team on novel ML architectures'
+      'Led product strategy and development for B2B SaaS platform serving 500+ enterprise clients',
+      'Managed 4-person product team to launch new features increasing revenue by 40%',
+      'Implemented analytics infrastructure to track key metrics and inform product decisions'
     ],
-    technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'Docker', 'AWS']
+    technologies: ['Product Strategy', 'Team Leadership', 'Analytics', 'SaaS']
   },
   {
     id: '3',
-    company: 'University Research Lab',
-    position: 'Research Assistant',
-    location: 'Stanford, CA',
-    startDate: '2022-01',
-    current: true,
+    company: 'Bain & Company',
+    companyUrl: 'https://www.bain.com',
+    companyLogo: '/images/bain.png',
+    position: 'Senior Associate Consultant',
+    location: 'Chicago, IL',
+    startDate: 'September 2020',
+    endDate: 'August 2022',
+    current: false,
     description: [
-      'Conducting research on transformer architectures for NLP tasks',
-      'Published 2 papers in top-tier conferences (ACL, EMNLP)',
-      'Developing open-source tools for the research community'
+      'Advised Fortune 500 clients on digital transformation and growth strategy initiatives',
+      'Built financial models and conducted market research for $2B+ M&A transactions',
+      'Developed data analytics tools to automate reporting and improve decision-making'
     ],
-    technologies: ['Python', 'PyTorch', 'Hugging Face', 'Docker', 'Git']
+    technologies: ['Strategy Consulting', 'Financial Analysis', 'Data Analytics', 'Project Management']
   }
 ];
 

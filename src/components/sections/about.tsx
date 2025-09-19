@@ -11,25 +11,17 @@ export default function AboutSection() {
           Get to know me better and understand my background, interests, and what drives me.
         </div>
 
-        <div className="about-content">
-          <div className="about-text slide-in-left delay-2">
-            <div className="mb-8">
+        <div className="about-grid">
+          {/* Top Row */}
+          <div className="about-top-row">
+            {/* Who I Am */}
+            <div className="about-intro slide-in-left delay-2">
               <h3>Who I Am</h3>
               <p>{aboutData.description}</p>
             </div>
             
-            <div className="mb-8">
-              <h4>Education</h4>
-              <div className="education-card">
-                <h5>{aboutData.education.degree}</h5>
-                <p>{aboutData.education.school}</p>
-                <p>{aboutData.education.year}</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="slide-in-right delay-3">
-            <div className="mb-8">
+            {/* Areas of Interest */}
+            <div className="about-interests slide-in-right delay-2">
               <h3>Areas of Interest</h3>
               <div className="interests">
                 {aboutData.interests.map((interest, index) => (
@@ -39,14 +31,35 @@ export default function AboutSection() {
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Bottom Row */}
+          <div className="about-bottom-row">
+            {/* Education */}
+            <div className="about-education slide-in-left delay-3">
+              <h4>Education</h4>
+              <div className="education-cards">
+                {aboutData.education.map((edu, index) => (
+                  <div key={`${edu.institution}-${edu.degree}`} className="education-card scale-in" style={{ animationDelay: `${0.4 + index * 0.1}s` }}>
+                    <h5>{edu.degree}</h5>
+                    <p>{edu.institution}</p>
+                    <p>{edu.year}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
             
-            <div className="stats-grid">
-              {aboutData.stats.map((stat, index) => (
-                <div key={stat.label} className="stat-card scale-in" style={{ animationDelay: `${0.6 + index * 0.1}s` }}>
-                  <div className="stat-number">{stat.value}</div>
-                  <div className="stat-label">{stat.label}</div>
-                </div>
-              ))}
+            {/* Experience Stats */}
+            <div className="about-stats slide-in-right delay-3">
+              <h4>Experience</h4>
+              <div className="stats-grid">
+                {aboutData.stats.map((stat, index) => (
+                  <div key={stat.label} className="stat-card scale-in" style={{ animationDelay: `${0.6 + index * 0.1}s` }}>
+                    <div className="stat-number">{stat.value}</div>
+                    <div className="stat-label">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

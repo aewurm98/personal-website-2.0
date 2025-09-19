@@ -16,6 +16,8 @@ export interface Project {
 export interface Experience {
   id: string;
   company: string;
+  companyUrl?: string;
+  companyLogo?: string;
   position: string;
   location: string;
   startDate: string;
@@ -54,13 +56,17 @@ export interface HeroData {
 }
 
 export interface AboutData {
-  bio: string;
+  description: string;
   interests: string[];
-  education: {
+  education: Array<{
     degree: string;
     institution: string;
     year: string;
-  };
+  }>;
+  stats: Array<{
+    value: string;
+    label: string;
+  }>;
 }
 
 export interface SiteConfig {
@@ -69,5 +75,7 @@ export interface SiteConfig {
   author: string;
   url: string;
   email: string;
+  phone?: string;
+  location: string;
   socialLinks: SocialLink[];
 }
