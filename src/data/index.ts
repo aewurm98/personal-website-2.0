@@ -1,50 +1,49 @@
 import { SiteConfig, HeroData, AboutData, Experience, Skill, Project } from '@/types';
 
 export const siteConfig: SiteConfig = {
-  title: 'Alex Wurm - Computer Science Graduate Student & Tech Professional',
-  description: 'Personal portfolio website showcasing technical expertise, projects, and professional experience in computer science and software development.',
+  title: 'Alex Wurm | Graduate Student & Entrepreneur',
+  description: 'Personal  website showcasing professional experience, technical skills, projects, and interests in tech and entrepreneurship.',
   author: 'Alex Wurm',
-  url: 'https://alexwurm.dev',
-  email: 'alex@alexwurm.dev',
+  url: 'https://alexwurm.com',
+  email: 'alexwurm@stanford.edu',
   socialLinks: [
     {
       name: 'GitHub',
-      url: 'https://github.com/alexwurm',
+      url: 'https://github.com/aewurm98',
       icon: 'github'
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/alexwurm',
+      url: 'https://linkedin.com/in/alex-wurm',
       icon: 'linkedin'
     },
     {
-      name: 'Twitter',
-      url: 'https://twitter.com/alexwurm',
-      icon: 'twitter'
+      name: 'X',
+      url: 'https://x.com/alexwurm_',
+      icon: 'X'
     }
   ]
 };
 
 export const heroData: HeroData = {
   name: 'Alex Wurm',
-  title: 'Computer Science Graduate Student',
-  subtitle: 'Full-Stack Developer & AI Enthusiast',
-  description: 'Passionate about building innovative solutions that bridge the gap between cutting-edge research and real-world applications.',
+  title: 'MBA Candidate @ Stanford GSB',
+  subtitle: 'Investor, Advisor & AI Enthusiast',
+  description: 'Building technology solutions that leverage AI to enhance individual health & wellness and business operations.',
   image: '/images/profile.jpg'
 };
 
 export const aboutData: AboutData = {
-  description: `I'm a Computer Science graduate student with a passion for software engineering and artificial intelligence. 
-  With over 3 years of experience in full-stack development, I specialize in building scalable web applications 
-  and exploring the frontiers of machine learning. My research focuses on natural language processing and 
-  computer vision applications, while my industry experience spans from startup environments to enterprise solutions.`,
+  description: `I'm an MBA student with a passion for software, digital health & artificial intelligence. 
+  With 5+ years of experience in consulting, startups & private equity investing, I specialize in building scalable products & business models.
+  I am interested in Summer 2026 roles where I can leverage my technical & financial expertise to innovate in enterprise tech & healthcare.`,
   interests: [
     'Machine Learning & AI',
     'Web Development',
-    'Open Source Software',
-    'Computer Vision',
     'Natural Language Processing',
-    'Cloud Computing'
+    'B2B Healthcare IT',
+    'Precision Drug Discovery',
+    'Internet of Medical Things'
   ],
   education: {
     degree: 'Master of Science in Computer Science',
@@ -52,10 +51,10 @@ export const aboutData: AboutData = {
     year: '2024'
   },
   stats: [
-    { value: '3+', label: 'Years Experience' },
-    { value: '15+', label: 'Projects Completed' },
-    { value: '2', label: 'Research Papers' },
-    { value: '10+', label: 'Technologies' }
+    { value: '5+', label: 'Years Experience' },
+    { value: '30+', label: 'Software Companies Evaluated' },
+    { value: '4,000+', label: 'Programming' },
+    { value: '5', label: 'Board Advisor Roles' }
   ]
 };
 
