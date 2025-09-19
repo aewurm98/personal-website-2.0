@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { experiences, skills } from '@/data';
 
 export default function ExperienceSection() {
@@ -42,7 +43,13 @@ export default function ExperienceSection() {
                           rel="noopener noreferrer"
                           className="company-logo"
                         >
-                          <img src={experience.companyLogo} alt={`${experience.company} logo`} />
+                          <Image 
+                            src={experience.companyLogo} 
+                            alt={`${experience.company} logo`}
+                            width={32}
+                            height={32}
+                            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                          />
                         </a>
                       )}
                     </div>
