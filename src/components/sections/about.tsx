@@ -1,14 +1,14 @@
 'use client';
 
-import { aboutData } from '@/data';
+import { aboutData, siteConfig } from '@/data';
 
 export default function AboutSection() {
   return (
     <section id="about" className="section about">
       <div className="container">
-        <div className="section-title fade-in">About Me</div>
+        <div className="section-title fade-in">{siteConfig.sections.about.title}</div>
         <div className="section-subtitle fade-in delay-1">
-          Get to know me better and understand my background, interests, and what drives me.
+          {siteConfig.sections.about.subtitle}
         </div>
 
         <div className="about-grid">
@@ -16,13 +16,13 @@ export default function AboutSection() {
           <div className="about-top-row">
             {/* Who I Am */}
             <div className="about-intro slide-in-left delay-2">
-              <h3>Who I Am</h3>
+              <h3>{siteConfig.sections.about.headings.whoIAm}</h3>
               <p>{aboutData.description}</p>
             </div>
             
             {/* Areas of Interest */}
             <div className="about-interests slide-in-right delay-2">
-              <h3>Areas of Interest</h3>
+              <h3>{siteConfig.sections.about.headings.interests}</h3>
               <div className="interests">
                 {aboutData.interests.map((interest, index) => (
                   <span key={interest} className="interest-tag scale-in" style={{ animationDelay: `${0.4 + index * 0.1}s` }}>
@@ -37,7 +37,7 @@ export default function AboutSection() {
           <div className="about-bottom-row">
             {/* Education */}
             <div className="about-education slide-in-left delay-3">
-              <h4>Education</h4>
+              <h4>{siteConfig.sections.about.headings.education}</h4>
               <div className="education-cards">
                 {aboutData.education.map((edu, index) => (
                   <div key={`${edu.institution}-${edu.degree}`} className="education-card scale-in" style={{ animationDelay: `${0.4 + index * 0.1}s` }}>
@@ -51,7 +51,7 @@ export default function AboutSection() {
             
             {/* Experience Stats */}
             <div className="about-stats slide-in-right delay-3">
-              <h4>Experience</h4>
+              <h4>{siteConfig.sections.about.headings.experience}</h4>
               <div className="stats-grid">
                 {aboutData.stats.map((stat, index) => (
                   <div key={stat.label} className="stat-card scale-in" style={{ animationDelay: `${0.6 + index * 0.1}s` }}>

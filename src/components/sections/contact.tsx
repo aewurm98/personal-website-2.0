@@ -6,48 +6,46 @@ export default function ContactSection() {
   return (
     <section id="contact" className="section contact">
       <div className="container">
-        <div className="section-title fade-in">Get In Touch</div>
+        <div className="section-title fade-in">{siteConfig.sections.contact.title}</div>
         <div className="section-subtitle fade-in delay-1">
-          I&apos;m always open to discussing new opportunities, interesting projects, or just having a chat about technology.
+          {siteConfig.sections.contact.subtitle}
         </div>
 
         <div className="contact-content">
           <div className="slide-in-left delay-2">
             <div className="contact-form">
-              <h3>Send a Message</h3>
-              <p>Fill out the form below and I&apos;ll get back to you as soon as possible.</p>
+              <h3>{siteConfig.sections.contact.form.title}</h3>
+              <p>{siteConfig.sections.contact.form.description}</p>
               
-              <form className="space-y-6">
-                <div className="form-grid">
-                  <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name" placeholder="Your name" name="name" />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" placeholder="your.email@example.com" name="email" />
-                  </div>
+              <form className="form-grid">
+                <div className="form-group">
+                  <label htmlFor="name">{siteConfig.sections.contact.form.labels.name}</label>
+                  <input type="text" id="name" placeholder={siteConfig.sections.contact.form.placeholders.name} name="name" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">{siteConfig.sections.contact.form.labels.email}</label>
+                  <input type="email" id="email" placeholder={siteConfig.sections.contact.form.placeholders.email} name="email" />
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="subject">Subject</label>
-                  <input type="text" id="subject" placeholder="What's this about?" name="subject" />
+                  <label htmlFor="subject">{siteConfig.sections.contact.form.labels.subject}</label>
+                  <input type="text" id="subject" placeholder={siteConfig.sections.contact.form.placeholders.subject} name="subject" />
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="message">Message</label>
-                  <textarea id="message" name="message" rows={6} placeholder="Tell me about your project or opportunity..."></textarea>
+                  <label htmlFor="message">{siteConfig.sections.contact.form.labels.message}</label>
+                  <textarea id="message" name="message" rows={6} placeholder={siteConfig.sections.contact.form.placeholders.message}></textarea>
                 </div>
                 
-                <button type="submit" className="submit-btn">Send Message</button>
+                <button type="submit" className="submit-btn">{siteConfig.sections.contact.form.submitButton}</button>
               </form>
             </div>
           </div>
           
           <div className="slide-in-right delay-3">
             <div className="contact-info">
-              <h3>Let&apos;s Connect</h3>
-              <p>I&apos;m always interested in hearing about new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
+              <h3>{siteConfig.sections.contact.connect.title}</h3>
+              <p>{siteConfig.sections.contact.connect.description}</p>
             </div>
             
             <div className="contact-methods">
@@ -58,7 +56,7 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div className="contact-details">
-                  <h4>Email</h4>
+                  <h4>{siteConfig.sections.contact.contactMethods.email}</h4>
                   <p>{siteConfig.email}</p>
                 </div>
               </a>
@@ -70,7 +68,7 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div className="contact-details">
-                  <h4>Phone</h4>
+                  <h4>{siteConfig.sections.contact.contactMethods.phone}</h4>
                   <p>+1 (914) 815-2447</p>
                 </div>
               </a>
@@ -83,22 +81,22 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div className="contact-details">
-                  <h4>Location</h4>
+                  <h4>{siteConfig.sections.contact.contactMethods.location}</h4>
                   <p>{siteConfig.location}</p>
                 </div>
               </div>
             </div>
             
             <div className="status-card">
-              <h4>Current Status</h4>
+              <h4>{siteConfig.sections.contact.status.title}</h4>
               <div className="status-indicator">
                 <div className="status-dot"></div>
-                <span className="status-text">Available for new opportunities</span>
+                <span className="status-text">{siteConfig.sections.contact.status.text}</span>
               </div>
               <div className="status-tags">
-                <span className="status-tag">Open to Work</span>
-                <span className="status-tag">Freelance</span>
-                <span className="status-tag">Full-time</span>
+                {siteConfig.sections.contact.status.tags.map((tag) => (
+                  <span key={tag} className="status-tag">{tag}</span>
+                ))}
               </div>
             </div>
           </div>

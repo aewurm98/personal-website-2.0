@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { heroData } from '@/data';
+import { heroData, siteConfig } from '@/data';
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -42,7 +42,7 @@ export default function HeroSection() {
       <div className="hero-content">
         <div className="hero-text fade-in">
           <h1>
-            Hi, I&apos;m{' '}
+            {siteConfig.sections.hero.greeting}{' '}
             <span>{heroData.name}</span>
           </h1>
           
@@ -55,14 +55,14 @@ export default function HeroSection() {
               className="btn btn-primary"
               onClick={() => scrollToSection('projects')}
             >
-              View My Work
+              {siteConfig.sections.hero.buttons.viewWork}
             </button>
             
             <button 
               className="btn btn-secondary"
               onClick={scrollToContactAndFocus}
             >
-              Get In Touch
+              {siteConfig.sections.hero.buttons.contact}
             </button>
           </div>
         </div>

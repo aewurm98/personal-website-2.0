@@ -378,6 +378,30 @@ nav.scrolled {
     margin-bottom: 2rem;
     border-bottom: 1px solid #e5e7eb;
   }
+
+  /* Mobile footer adjustments */
+  .footer-section {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    column-gap: 1.5rem;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .social-links svg {
+    margin-right: 0.5rem;
+  }
 }
 
 /* Desktop Styles */
@@ -476,32 +500,37 @@ nav.scrolled {
   gap: 1rem;
   margin-top: 1rem;
   height: 100%;
-  grid-template-rows: repeat(2, 1fr);
+  grid-auto-rows: 1fr; /* Make all rows equal height */
 }
 
 .stat-card {
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
-  padding: 1.25rem;
+  padding: 1.25rem 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 100%; /* Fill the grid cell */
 }
 
 .stat-number {
   font-size: 1.875rem;
   font-weight: bold;
   color: #2563eb;
-  margin-bottom: 0.25rem;
-  line-height: 1.2;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  flex: 0 0 auto; /* Don't allow number to flex/shrink */
 }
 
 .stat-label {
   font-size: 0.875rem;
   color: #6b7280;
   line-height: 1.4;
+  flex: 1 1 auto; /* Allow label to take remaining space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Experience Section */
@@ -515,6 +544,18 @@ nav.scrolled {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
+}
+
+/* Ensure consistent header heights in experience section */
+.timeline h3,
+.skills-section h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
 }
 
 .timeline {
@@ -883,6 +924,7 @@ nav.scrolled {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
+  align-items: stretch; /* Change back to stretch */
 }
 
 .contact-form {
@@ -890,6 +932,9 @@ nav.scrolled {
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   padding: 1.5rem;
+  height: 100%; /* Ensure full height */
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-form h3 {
@@ -902,19 +947,20 @@ nav.scrolled {
 .contact-form p {
   font-size: 0.875rem;
   color: #6b7280;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Reduce bottom margin */
 }
 
 .form-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Reduce gap between form elements */
+  width: 100%;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 .form-group label {
@@ -931,6 +977,7 @@ nav.scrolled {
   border-radius: 0.375rem;
   font-size: 1rem;
   transition: border-color 0.2s ease;
+  width: 100%;
 }
 
 .form-group input:focus,
@@ -941,20 +988,24 @@ nav.scrolled {
 }
 
 .form-group textarea {
-  resize: vertical;
-  min-height: 6rem;
+  resize: none;
+  height: 8rem; /* Reduce the textarea height */
 }
 
 .submit-btn {
-  width: 100%;
+  width: auto;
+  min-width: 160px;
+  max-width: 100%;
   background: #2563eb;
   color: white;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 2.5rem;
   border-radius: 0.5rem;
   font-weight: 500;
+  font-size: 1rem;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  align-self: center;
 }
 
 .submit-btn:hover {
@@ -968,16 +1019,21 @@ nav.scrolled {
   margin-bottom: 1rem;
 }
 
+.contact-info {
+  flex-shrink: 0;
+}
+
 .contact-info p {
   color: #6b7280;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .contact-methods {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: auto; /* Push status card to bottom */
+  flex-shrink: 0;
 }
 
 .contact-method {
@@ -1030,6 +1086,7 @@ nav.scrolled {
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   padding: 1.5rem;
+  flex-shrink: 0;
 }
 
 .status-card h4 {
@@ -1084,6 +1141,15 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .footer-content {
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 0 2rem;
+    align-items: start;
+  }
 }
 
 .footer-section h3 {
@@ -1110,17 +1176,31 @@ footer {
 
 .footer-links {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .footer-links {
+    flex-direction: row;
+    gap: 2rem;
+  }
 }
 
 .footer-links li {
-  margin-bottom: 0.5rem;
+  margin: 0;
 }
 
 .footer-links a {
   color: #6b7280;
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
   transition: color 0.2s ease;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
 }
 
 .footer-links a:hover {
@@ -1129,9 +1209,15 @@ footer {
 
 .social-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   align-items: center;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .social-links {
+    justify-content: flex-start;
+  }
 }
 
 .social-links a {
@@ -1144,13 +1230,12 @@ footer {
 }
 
 .social-links a:hover {
-  color: #2563eb;
+  color: #111827;
 }
 
 .social-links svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 0.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
 }
 
 .social-link-text {
@@ -1159,13 +1244,19 @@ footer {
 }
 
 .footer-bottom {
-  margin-top: 2rem;
+  width: 100%;
+  margin-top: 3rem;
   padding-top: 2rem;
+  padding-bottom: 2rem;
   border-top: 1px solid #e5e7eb;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  text-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-bottom p {
@@ -1201,6 +1292,7 @@ footer {
   
   .contact-content {
     grid-template-columns: 1fr 1fr;
+    align-items: stretch;
   }
   
   .form-grid {
@@ -1216,9 +1308,9 @@ footer {
   }
   
   .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 
@@ -1277,6 +1369,14 @@ footer {
   .section-title {
     font-size: 3.75rem;
   }
+}
+
+/* Contact Section Animation Wrappers */
+.contact-content > .slide-in-left,
+.contact-content > .slide-in-right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Animation Classes */

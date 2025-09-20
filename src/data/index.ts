@@ -24,7 +24,84 @@ export const siteConfig: SiteConfig = {
       url: 'https://x.com/alexwurm_',
       icon: 'X'
     }
-  ]
+  ],
+  sections: {
+    hero: {
+      title: 'Welcome',
+      greeting: "Hi, I'm",
+      buttons: {
+        viewWork: 'View Projects',
+        contact: 'Get In Touch'
+      }
+    },
+    projects: {
+      title: 'Featured Projects',
+      subtitle: 'A selection of personal project I have worked on.',
+      categories: {
+        all: 'All Projects',
+        web: 'Web Development',
+        mobile: 'Mobile Apps',
+        ai: 'AI/ML',
+        data: 'Data Science',
+        other: 'Other'
+      },
+      viewAll: 'View All Projects →',
+      viewDetails: 'View Details →'
+    },
+    experience: {
+      title: 'Experience & Skills',
+      subtitle: 'My professional journey and areas of expertise.',
+      headings: {
+        workExperience: 'Work Experience',
+        technicalSkills: 'Technical Skills'
+      }
+    },
+    about: {
+      title: 'About Me',
+      subtitle: 'Get to know my background, interests and ambitions.',
+      headings: {
+        whoIAm: 'Who I Am',
+        interests: 'Areas of Interest',
+        education: 'Education',
+        experience: 'Experience'
+      }
+    },
+    contact: {
+      title: 'Get In Touch',
+      subtitle: "Where to find me.",
+      form: {
+        title: 'Send a Message',
+        description: "Fill out the form below and I'll get back to you as soon as possible.",
+        labels: {
+          name: 'Name',
+          email: 'Email',
+          subject: 'Subject',
+          message: 'Message'
+        },
+        placeholders: {
+          name: 'Your name',
+          email: 'your.email@example.com',
+          subject: "What's this about?",
+          message: 'Tell me about your project or opportunity...'
+        },
+        submitButton: 'Send Message'
+      },
+      connect: {
+        title: "Let's Connect",
+        description: "I'm always interested in hearing about new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!"
+      },
+      status: {
+        title: 'Current Status',
+        text: 'Available for new opportunities',
+        tags: ['Open to Work', 'Freelance', 'Full-time']
+      },
+      contactMethods: {
+        email: 'Email',
+        phone: 'Phone',
+        location: 'Location'
+      }
+    }
+  }
 };
 
 export const heroData: HeroData = {
@@ -167,8 +244,8 @@ export const projects: Project[] = [
     image: '/images/projects/ai-chat.jpg',
     technologies: ['Python', 'PyTorch', 'React', 'Node.js', 'PostgreSQL', 'Docker'],
     category: 'ai',
-    githubUrl: 'https://github.com/alexwurm/ai-chat-assistant',
-    liveUrl: 'https://ai-chat.alexwurm.dev',
+    githubUrl: 'https://github.com/aewurm98/ai-chat-assistant',
+    liveUrl: 'https://ai-chat.alexwurm.com',
     featured: true,
     date: '2024-03'
   },
@@ -184,8 +261,8 @@ export const projects: Project[] = [
     image: '/images/projects/ecommerce.jpg',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe', 'PostgreSQL', 'AWS'],
     category: 'web',
-    githubUrl: 'https://github.com/alexwurm/ecommerce-platform',
-    liveUrl: 'https://ecommerce.alexwurm.dev',
+    githubUrl: 'https://github.com/aewurm98/ecommerce-platform',
+    liveUrl: 'https://ecommerce.alexwurm.com',
     featured: true,
     date: '2024-01'
   },
@@ -201,8 +278,8 @@ export const projects: Project[] = [
     image: '/images/projects/dashboard.jpg',
     technologies: ['React', 'D3.js', 'Node.js', 'Socket.io', 'MongoDB', 'Docker'],
     category: 'data',
-    githubUrl: 'https://github.com/alexwurm/data-dashboard',
-    liveUrl: 'https://dashboard.alexwurm.dev',
+    githubUrl: 'https://github.com/aewurm98/data-dashboard',
+    liveUrl: 'https://dashboard.alexwurm.com',
     featured: false,
     date: '2023-11'
   },
@@ -218,8 +295,8 @@ export const projects: Project[] = [
     image: '/images/projects/fitness-app.jpg',
     technologies: ['React Native', 'TypeScript', 'Firebase', 'Redux', 'Expo', 'Node.js'],
     category: 'mobile',
-    githubUrl: 'https://github.com/alexwurm/fitness-app',
-    liveUrl: 'https://fitness.alexwurm.dev',
+    githubUrl: 'https://github.com/aewurm98/fitness-app',
+    liveUrl: 'https://fitness.alexwurm.com',
     featured: false,
     date: '2023-08'
   },
@@ -235,8 +312,8 @@ export const projects: Project[] = [
     image: '/images/projects/ml-pipeline.jpg',
     technologies: ['Python', 'TensorFlow', 'Kubernetes', 'Airflow', 'MLflow', 'Docker'],
     category: 'ai',
-    githubUrl: 'https://github.com/alexwurm/ml-pipeline',
-    liveUrl: 'https://ml-pipeline.alexwurm.dev',
+    githubUrl: 'https://github.com/aewurm98/ml-pipeline',
+    liveUrl: 'https://ml-pipeline.alexwurm.com',
     featured: true,
     date: '2023-06'
   },
@@ -252,8 +329,8 @@ export const projects: Project[] = [
     image: '/images/projects/task-management.jpg',
     technologies: ['Vue.js', 'Node.js', 'Socket.io', 'PostgreSQL', 'Redis', 'AWS'],
     category: 'web',
-    githubUrl: 'https://github.com/alexwurm/task-management',
-    liveUrl: 'https://tasks.alexwurm.dev',
+    githubUrl: 'https://github.com/aewurm98/task-management',
+    liveUrl: 'https://tasks.alexwurm.com',
     featured: false,
     date: '2023-04'
   }

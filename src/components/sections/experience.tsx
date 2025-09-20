@@ -1,20 +1,20 @@
 'use client';
 
 import Image from 'next/image';
-import { experiences, skills } from '@/data';
+import { experiences, skills, siteConfig } from '@/data';
 
 export default function ExperienceSection() {
   return (
     <section id="experience" className="section experience">
       <div className="container">
-        <div className="section-title fade-in">Experience & Skills</div>
+        <div className="section-title fade-in">{siteConfig.sections.experience.title}</div>
         <div className="section-subtitle fade-in delay-1">
-          My professional journey and technical expertise across various domains.
+          {siteConfig.sections.experience.subtitle}
         </div>
 
         <div className="experience-content">
           <div className="timeline">
-            <h3 className="fade-in delay-2">Work Experience</h3>
+            <h3 className="fade-in delay-2">{siteConfig.sections.experience.headings.workExperience}</h3>
             <div className="timeline">
               {experiences.map((experience, index) => (
                 <div key={experience.id} className="timeline-item fade-in" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
@@ -74,7 +74,7 @@ export default function ExperienceSection() {
           </div>
           
           <div className="skills-section">
-            <h3 className="fade-in delay-2">Technical Skills</h3>
+            <h3 className="fade-in delay-2">{siteConfig.sections.experience.headings.technicalSkills}</h3>
             {['frontend', 'backend', 'database', 'devops', 'ai', 'other'].map((category) => {
               const categorySkills = skills.filter(skill => skill.category === category);
               if (categorySkills.length === 0) return null;

@@ -69,6 +69,15 @@ export interface AboutData {
   }>;
 }
 
+export interface SectionConfig {
+  title: string;
+  subtitle?: string;
+  headings?: Record<string, string>;
+  buttons?: Record<string, string>;
+  labels?: Record<string, string>;
+  placeholders?: Record<string, string>;
+}
+
 export interface SiteConfig {
   title: string;
   description: string;
@@ -78,4 +87,72 @@ export interface SiteConfig {
   phone?: string;
   location: string;
   socialLinks: SocialLink[];
+  sections: {
+    hero: SectionConfig & {
+      greeting: string;
+      buttons: {
+        viewWork: string;
+        contact: string;
+      };
+    };
+    about: SectionConfig & {
+      headings: {
+        whoIAm: string;
+        interests: string;
+        education: string;
+        experience: string;
+      };
+    };
+    projects: SectionConfig & {
+      categories: {
+        all: string;
+        web: string;
+        mobile: string;
+        ai: string;
+        data: string;
+        other: string;
+      };
+      viewAll: string;
+      viewDetails: string;
+    };
+    experience: SectionConfig & {
+      headings: {
+        workExperience: string;
+        technicalSkills: string;
+      };
+    };
+    contact: SectionConfig & {
+      form: {
+        title: string;
+        description: string;
+        labels: {
+          name: string;
+          email: string;
+          subject: string;
+          message: string;
+        };
+        placeholders: {
+          name: string;
+          email: string;
+          subject: string;
+          message: string;
+        };
+        submitButton: string;
+      };
+      connect: {
+        title: string;
+        description: string;
+      };
+      status: {
+        title: string;
+        text: string;
+        tags: string[];
+      };
+      contactMethods: {
+        email: string;
+        phone: string;
+        location: string;
+      };
+    };
+  };
 }

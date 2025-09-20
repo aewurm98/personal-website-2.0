@@ -1,6 +1,6 @@
 'use client';
 
-import { projects } from '@/data';
+import { projects, siteConfig } from '@/data';
 import { useState } from 'react';
 import Link from 'next/link';
 
@@ -23,9 +23,9 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="section projects">
       <div className="container">
-        <div className="section-title fade-in">Featured Projects</div>
+        <div className="section-title fade-in">{siteConfig.sections.projects.title}</div>
         <div className="section-subtitle fade-in delay-1">
-          A showcase of my recent work, demonstrating my skills and passion for building innovative solutions.
+          {siteConfig.sections.projects.subtitle}
         </div>
 
         <div className="filter-buttons fade-in delay-2">
