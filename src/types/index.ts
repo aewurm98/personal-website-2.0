@@ -62,6 +62,8 @@ export interface AboutData {
     degree: string;
     institution: string;
     year: string;
+    institutionUrl?: string;
+    institutionLogo?: string;
   }>;
   stats: Array<{
     value: string;
@@ -118,6 +120,7 @@ export interface SiteConfig {
     experience: SectionConfig & {
       headings: {
         workExperience: string;
+        internships: string;
         technicalSkills: string;
       };
     };

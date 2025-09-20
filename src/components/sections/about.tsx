@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { aboutData, siteConfig } from '@/data';
 
 export default function AboutSection() {
@@ -41,9 +42,37 @@ export default function AboutSection() {
               <div className="education-cards">
                 {aboutData.education.map((edu, index) => (
                   <div key={`${edu.institution}-${edu.degree}`} className="education-card scale-in" style={{ animationDelay: `${0.4 + index * 0.1}s` }}>
-                    <h5>{edu.degree}</h5>
-                    <p>{edu.institution}</p>
-                    <p>{edu.year}</p>
+                    <div className="education-header">
+                      <div>
+                        <h5>{edu.degree}</h5>
+                        <p>{edu.institution}</p>
+                        <p>{edu.year}</p>
+                      </div>
+                      {edu.institutionLogo && edu.institutionUrl && (
+                        <a 
+                          href={edu.institutionUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="institution-logo"
+                        >
+                          <Image 
+                            src={edu.institutionLogo} 
+                            alt={`${edu.institution} logo`}
+                            width={32}
+                            height={32}
+                            priority
+                            style={{ 
+                              width: '100%', 
+                              height: '100%', 
+                              objectFit: 'contain'
+                            }}
+                            onError={(e) => {
+                              console.error(`Error loading image: ${edu.institutionLogo}`);
+                            }}
+                          />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>

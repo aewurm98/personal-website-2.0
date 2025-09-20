@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { experiences, skills, siteConfig } from '@/data';
+import { experiences, internships, skills, siteConfig } from '@/data';
 
 export default function ExperienceSection() {
   return (
@@ -70,6 +70,59 @@ export default function ExperienceSection() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="internships">
+              <h3 className="fade-in delay-2">{siteConfig.sections.experience.headings.internships}</h3>
+              <div className="internship-section">
+                <div className="timeline-marker"></div>
+                <div className="internship-grid">
+                  {internships.map((internship, index) => (
+                    <div 
+                      key={internship.id} 
+                      className="internship-card-wrapper fade-in"
+                      style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+                    >
+                      <div className="internship-card">
+                        <div className="internship-header">
+                          <div>
+                            <h4 className="internship-title">{internship.position}</h4>
+                            <p className="internship-company">
+                              {internship.companyUrl ? (
+                                <a href={internship.companyUrl} target="_blank" rel="noopener noreferrer">
+                                  {internship.company}
+                                </a>
+                              ) : (
+                                internship.company
+                              )}
+                            </p>
+                            <div className="internship-meta">
+                              <p className="internship-location">{internship.location}</p>
+                              <p className="internship-date">{internship.startDate} - {internship.endDate}</p>
+                            </div>
+                          </div>
+                          {internship.companyLogo && (
+                            <a 
+                              href={internship.companyUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="internship-logo"
+                            >
+                              <Image 
+                                src={internship.companyLogo} 
+                                alt={`${internship.company} logo`}
+                                width={32}
+                                height={32}
+                                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                              />
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
           

@@ -53,6 +53,7 @@ export const siteConfig: SiteConfig = {
       subtitle: 'My professional journey and areas of expertise.',
       headings: {
         workExperience: 'Work Experience',
+        internships: 'Internship Experience',
         technicalSkills: 'Technical Skills'
       }
     },
@@ -128,12 +129,16 @@ export const aboutData: AboutData = {
     {
       degree: 'Master of Business Administration',
       institution: 'Stanford Graduate School of Business',
-      year: '2027'
+      year: '2027',
+      institutionUrl: 'https://www.gsb.stanford.edu',
+      institutionLogo: '/images/stanford-gsb-logo.png'
     },
     {
       degree: 'Bachelor of Science, Chemical & Biomolecular Engineering',
       institution: 'Cornell University',
-      year: '2020'
+      year: '2020',
+      institutionUrl: 'https://www.cornell.edu',
+      institutionLogo: '/images/cornell-logo.png'
     }
   ],
   stats: [
@@ -143,6 +148,62 @@ export const aboutData: AboutData = {
     { value: '5', label: 'Board Advisor Roles' }
   ]
 };
+
+export const internships: Experience[] = [
+  {
+    id: 'i1',
+    company: 'Kindeva Drug Delivery',
+    companyUrl: 'https://www.kindevadd.com/',
+    companyLogo: '/images/kindeva.png',
+    position: 'Strategy & Operations Associate',
+    location: 'St. Paul, MN',
+    startDate: 'July 2020',
+    endDate: 'September 2020',
+    current: false,
+    description: [],
+    technologies: []
+  },
+  {
+    id: 'i2',
+    company: 'PepsiCo',
+    companyUrl: 'https://www.pepsico.com/',
+    companyLogo: '/images/pepsico.png',
+    position: 'Commercialization Engineering Intern',
+    location: 'White Plains, NY',
+    startDate: 'May 2019',
+    endDate: 'August 2019',
+    current: false,
+    description: [],
+    technologies: []
+  },
+  {
+    id: 'i3',
+    company: 'Procter & Gamble',
+    companyUrl: 'https://us.pg.com/',
+    companyLogo: '/images/procter_and_gamble.png',
+    position: 'Process Engineering Intern',
+    location: 'Cincinnati, OH',
+    startDate: 'May 2018',
+    endDate: 'August 2018',
+    current: false,
+    description: [],
+    technologies: []
+  },
+
+  {
+    id: 'i4',
+    company: 'LogicPrep Education',
+    companyUrl: 'https://logic-prep-cbxu.squarespace.com/',
+    companyLogo: '/images/logicprep.png',
+    position: 'Database Management Intern',
+    location: 'Armonk, NY',
+    startDate: 'April 2016',
+    endDate: 'January 2018',
+    current: false,
+    description: [],
+    technologies: []
+  }
+];
 
 export const experiences: Experience[] = [
   {
