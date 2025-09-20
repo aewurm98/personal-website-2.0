@@ -94,7 +94,7 @@ export const siteConfig: SiteConfig = {
       status: {
         title: 'Current Status',
         text: 'Available for new opportunities',
-        tags: ['Open to Work', 'Freelance', 'Full-time']
+        tags: ['Open to Work', 'Internships', 'Projects', 'Advisory', 'Investments']
       },
       contactMethods: {
         email: 'Email',
@@ -260,36 +260,128 @@ export const experiences: Experience[] = [
 ];
 
 export const skills: Skill[] = [
-  // Frontend
-  { name: 'React', category: 'frontend', proficiency: 5, icon: 'react' },
-  { name: 'TypeScript', category: 'frontend', proficiency: 5, icon: 'typescript' },
-  { name: 'Next.js', category: 'frontend', proficiency: 4, icon: 'nextjs' },
-  { name: 'Tailwind CSS', category: 'frontend', proficiency: 4, icon: 'tailwind' },
-  
-  // Backend
-  { name: 'Node.js', category: 'backend', proficiency: 5, icon: 'nodejs' },
-  { name: 'Python', category: 'backend', proficiency: 5, icon: 'python' },
-  { name: 'Express.js', category: 'backend', proficiency: 4, icon: 'express' },
-  { name: 'FastAPI', category: 'backend', proficiency: 4, icon: 'fastapi' },
-  
-  // Database
-  { name: 'PostgreSQL', category: 'database', proficiency: 4, icon: 'postgresql' },
-  { name: 'MongoDB', category: 'database', proficiency: 3, icon: 'mongodb' },
-  { name: 'Redis', category: 'database', proficiency: 3, icon: 'redis' },
-  
-  // DevOps
-  { name: 'Docker', category: 'devops', proficiency: 4, icon: 'docker' },
-  { name: 'AWS', category: 'devops', proficiency: 4, icon: 'aws' },
-  { name: 'Kubernetes', category: 'devops', proficiency: 3, icon: 'kubernetes' },
-  
-  // AI/ML
-  { name: 'TensorFlow', category: 'ai', proficiency: 4, icon: 'tensorflow' },
-  { name: 'PyTorch', category: 'ai', proficiency: 4, icon: 'pytorch' },
-  { name: 'Scikit-learn', category: 'ai', proficiency: 4, icon: 'scikit' },
-  
-  // Other
-  { name: 'Git', category: 'other', proficiency: 5, icon: 'git' },
-  { name: 'Linux', category: 'other', proficiency: 4, icon: 'linux' }
+  // Finance Skills
+  {
+    name: 'Financial modeling',
+    category: 'finance',
+    proficiency: 'Expert',
+    tools: [
+      { name: 'Microsoft Excel', icon: 'excel' },
+      { name: 'PowerBI', icon: 'powerbi' },
+      { name: 'Tableau', icon: 'tableau' },
+      { name: 'Looker', icon: 'looker' },
+      { name: 'QuickBooks', icon: 'quickbooks' },
+      { name: 'Pitchbook', icon: 'pitchbook' },
+      { name: 'Capital IQ', icon: 'capitaliq' }
+    ]
+  },
+  {
+    name: 'Data visualization',
+    category: 'finance',
+    proficiency: 'Proficient',
+    tools: [
+      { name: 'Microsoft Excel', icon: 'excel' },
+      { name: 'PowerBI', icon: 'powerbi' },
+      { name: 'Tableau', icon: 'tableau' },
+      { name: 'Looker', icon: 'looker' }
+    ]
+  },
+  {
+    name: 'Financial statement analysis',
+    category: 'finance',
+    proficiency: 'Expert',
+    tools: [
+      { name: 'Microsoft Excel', icon: 'excel' },
+      { name: 'QuickBooks', icon: 'quickbooks' },
+      { name: 'Pitchbook', icon: 'pitchbook' },
+      { name: 'Capital IQ', icon: 'capitaliq' }
+    ]
+  },
+
+  // Operations Skills
+  {
+    name: 'Agile/scrum',
+    category: 'operations',
+    proficiency: 'Proficient',
+    tools: [
+      { name: 'Trello', icon: 'trello' },
+      { name: 'Asana', icon: 'asana' },
+      { name: 'ClickUp', icon: 'clickup' },
+      { name: 'Jira', icon: 'jira' }
+    ]
+  },
+  {
+    name: 'Go-to-market',
+    category: 'operations',
+    proficiency: 'Expert',
+    tools: [
+      { name: 'Linear', icon: 'linear' },
+      { name: 'Google Analytics', icon: 'google-analytics' },
+      { name: 'Salesforce', icon: 'salesforce' },
+      { name: 'Hubspot', icon: 'hubspot' }
+    ]
+  },
+  {
+    name: 'Performance management',
+    category: 'operations',
+    proficiency: 'Proficient',
+    tools: [
+      { name: 'Linear', icon: 'linear' },
+      { name: 'Google Analytics', icon: 'google-analytics' },
+      { name: 'Salesforce', icon: 'salesforce' },
+      { name: 'Hubspot', icon: 'hubspot' }
+    ]
+  },
+
+  // Development Skills
+  {
+    name: 'Frontend',
+    category: 'development',
+    proficiency: 'Proficient',
+    tools: [
+      { name: 'HTML', icon: 'html' },
+      { name: 'CSS', icon: 'css' },
+      { name: 'JavaScript', icon: 'javascript' },
+      { name: 'TypeScript', icon: 'typescript' },
+      { name: 'React', icon: 'react' },
+      { name: 'Next.js', icon: 'nextjs' }
+    ]
+  },
+  {
+    name: 'Database',
+    category: 'development',
+    proficiency: 'Proficient',
+    tools: [
+      { name: 'SQL', icon: 'sql' },
+      { name: 'Java', icon: 'java' }
+    ]
+  },
+  {
+    name: 'AI/ML',
+    category: 'development',
+    proficiency: 'Intermediate',
+    tools: [
+      { name: 'Python', icon: 'python' },
+      { name: 'Jupyter', icon: 'jupyter' }
+    ]
+  },
+  {
+    name: 'Data science',
+    category: 'development',
+    proficiency: 'Expert',
+    tools: [
+      { name: 'Python', icon: 'python' },
+      { name: 'Matlab', icon: 'matlab' }
+    ]
+  },
+  {
+    name: 'Code management',
+    category: 'development',
+    proficiency: 'Intermediate',
+    tools: [
+      { name: 'Git', icon: 'git' }
+    ]
+  }
 ];
 
 export const projects: Project[] = [

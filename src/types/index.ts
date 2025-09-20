@@ -27,11 +27,16 @@ export interface Experience {
   technologies: string[];
 }
 
+export interface SkillTool {
+  name: string;
+  icon?: string;
+}
+
 export interface Skill {
   name: string;
-  category: 'frontend' | 'backend' | 'database' | 'devops' | 'ai' | 'other';
-  proficiency: number; // 1-5 scale
-  icon?: string;
+  category: 'finance' | 'operations' | 'development';
+  proficiency: 'Novice' | 'Fair' | 'Intermediate' | 'Proficient' | 'Expert';
+  tools: SkillTool[];
 }
 
 export interface ContactForm {

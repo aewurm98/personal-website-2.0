@@ -66,7 +66,7 @@ export default function AboutSection() {
                               height: '100%', 
                               objectFit: 'contain'
                             }}
-                            onError={(e) => {
+                            onError={() => {
                               console.error(`Error loading image: ${edu.institutionLogo}`);
                             }}
                           />

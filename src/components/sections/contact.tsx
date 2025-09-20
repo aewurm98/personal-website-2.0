@@ -1,8 +1,119 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import emailjs from '@emailjs/browser';
 import { siteConfig } from '@/data';
+import { emailConfig, isEmailConfigValid } from '@/lib/emailjs-config';
+
+// Form validation schema
+const contactFormSchema = z.object({
+  name: z.string()
+    .min(2, 'Name must be at least 2 characters')
+    .max(50, 'Name must be less than 50 characters'),
+  email: z.string()
+    .email('Please enter a valid email address'),
+  subject: z.string()
+    .min(5, 'Subject must be at least 5 characters')
+    .max(100, 'Subject must be less than 100 characters'),
+  message: z.string()
+    .min(10, 'Message must be at least 10 characters')
+    .max(1000, 'Message must be less than 1000 characters'),
+});
+
+type FormData = z.infer<typeof contactFormSchema>;
 
 export default function ContactSection() {
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Initialize EmailJS once on component mount
+  useEffect(() => {
+    if (!isEmailConfigValid()) {
+      console.error('EmailJS configuration is incomplete');
+      return;
+    }
+
+    try {
+      emailjs.init({
+        publicKey: emailConfig.publicKey,
+      });
+      setIsInitialized(true);
+      console.log('EmailJS initialized successfully');
+    } catch (error) {
+      console.error('Failed to initialize EmailJS:', error);
+      setIsInitialized(false);
+    }
+  }, []);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(contactFormSchema),
+  });
+
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Check initialization
+      if (!isInitialized) {
+        throw new Error('Email service is not initialized');
+      }
+
+      // Check internet connection
+      if (!navigator.onLine) {
+        throw new Error('No internet connection. Please check your network and try again.');
+      }
+
+      // Log only non-sensitive information
+      console.log('Attempting to send email from:', {
+        name: data.name,
+        email: data.email,
+        messageLength: data.message.length,
+      });
+
+      // Attempt to send email
+      const result = await emailjs.send(
+        emailConfig.serviceId,
+        emailConfig.templateId,
+        {
+          subject: data.subject,
+          from_name: data.name,
+          time: new Date().toLocaleString(),
+          message: data.message,
+          from_email: data.email
+        },
+        emailConfig.publicKey
+      ).catch(error => {
+        // Handle network or CORS errors
+        if (error.message.includes('Failed to fetch') || error.message.includes('access control')) {
+          throw new Error('Unable to connect to email service. Please try again later.');
+        }
+        throw error;
+      });
+
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        reset();
+        console.log('Email sent successfully');
+      } else {
+        throw new Error('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section id="contact" className="section contact">
       <div className="container">
@@ -17,27 +128,82 @@ export default function ContactSection() {
               <h3>{siteConfig.sections.contact.form.title}</h3>
               <p>{siteConfig.sections.contact.form.description}</p>
               
-              <form className="form-grid">
+              <form className="form-grid" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                   <label htmlFor="name">{siteConfig.sections.contact.form.labels.name}</label>
-                  <input type="text" id="name" placeholder={siteConfig.sections.contact.form.placeholders.name} name="name" />
+                  <input
+                    type="text"
+                    id="name"
+                    className={`form-input ${errors.name ? 'error' : ''}`}
+                    placeholder={siteConfig.sections.contact.form.placeholders.name}
+                    {...register('name')}
+                  />
+                  {errors.name && (
+                    <span className="error-message">{errors.name.message}</span>
+                  )}
                 </div>
+
                 <div className="form-group">
                   <label htmlFor="email">{siteConfig.sections.contact.form.labels.email}</label>
-                  <input type="email" id="email" placeholder={siteConfig.sections.contact.form.placeholders.email} name="email" />
+                  <input
+                    type="email"
+                    id="email"
+                    className={`form-input ${errors.email ? 'error' : ''}`}
+                    placeholder={siteConfig.sections.contact.form.placeholders.email}
+                    {...register('email')}
+                  />
+                  {errors.email && (
+                    <span className="error-message">{errors.email.message}</span>
+                  )}
                 </div>
                 
                 <div className="form-group">
                   <label htmlFor="subject">{siteConfig.sections.contact.form.labels.subject}</label>
-                  <input type="text" id="subject" placeholder={siteConfig.sections.contact.form.placeholders.subject} name="subject" />
+                  <input
+                    type="text"
+                    id="subject"
+                    className={`form-input ${errors.subject ? 'error' : ''}`}
+                    placeholder={siteConfig.sections.contact.form.placeholders.subject}
+                    {...register('subject')}
+                  />
+                  {errors.subject && (
+                    <span className="error-message">{errors.subject.message}</span>
+                  )}
                 </div>
                 
                 <div className="form-group">
                   <label htmlFor="message">{siteConfig.sections.contact.form.labels.message}</label>
-                  <textarea id="message" name="message" rows={6} placeholder={siteConfig.sections.contact.form.placeholders.message}></textarea>
+                  <textarea
+                    id="message"
+                    rows={6}
+                    className={`form-input ${errors.message ? 'error' : ''}`}
+                    placeholder={siteConfig.sections.contact.form.placeholders.message}
+                    {...register('message')}
+                  ></textarea>
+                  {errors.message && (
+                    <span className="error-message">{errors.message.message}</span>
+                  )}
                 </div>
+
+                {submitStatus === 'success' && (
+                  <div className="success-message">
+                    Message sent successfully! We&apos;ll get back to you soon.
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="error-message">
+                    Failed to send message. Please try again later.
+                  </div>
+                )}
                 
-                <button type="submit" className="submit-btn">{siteConfig.sections.contact.form.submitButton}</button>
+                <button
+                  type="submit"
+                  className={`submit-btn ${isSubmitting ? 'submitting' : ''}`}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : siteConfig.sections.contact.form.submitButton}
+                </button>
               </form>
             </div>
           </div>

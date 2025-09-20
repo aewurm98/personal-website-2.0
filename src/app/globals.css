@@ -911,28 +911,41 @@ nav.scrolled {
   }
 }
 
-/* Skills */
-.skills-section h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 1.5rem;
+/* Skills Section */
+.skills-section {
+  background: white;
+  padding: 5rem 0;
 }
 
 .skill-category {
-  margin-bottom: 1.5rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.skill-category h4 {
-  font-size: 1.125rem;
-  font-weight: 500;
+.skill-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #111827;
-  margin-bottom: 0.75rem;
+  margin-bottom: 2rem;
   text-transform: capitalize;
 }
 
 .skill-item {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.skill-item:last-child {
+  margin-bottom: 0;
 }
 
 .skill-header {
@@ -946,25 +959,87 @@ nav.scrolled {
   font-size: 0.875rem;
   font-weight: 500;
   color: #111827;
+  text-transform: none;
 }
 
 .skill-level {
   font-size: 0.75rem;
   font-weight: 500;
-  color: #059669;
+  color: #2563eb;
 }
 
 .skill-bar {
   width: 100%;
-  background: #f3f4f6;
+  height: 8px;
+  background-color: #e5e7eb;
   border-radius: 9999px;
-  height: 0.5rem;
+  overflow: hidden;
 }
 
 .skill-progress {
-  background: #2563eb;
-  height: 0.5rem;
+  height: 100%;
+  background-color: #3b82f6;
   border-radius: 9999px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.tech-tag {
+  color: #111827;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: white;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 0 1 auto;
+  min-width: min-content;
+  max-width: 100%;
+}
+
+.tech-tag:hover {
+  background: #f3f4f6;
+  transform: translateY(-1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .tools-grid {
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+  
+  .tech-tag {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.7rem;
+    flex: 0 0 auto;
+    min-width: 60px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .tools-grid {
+    gap: 0.5rem;
+  }
+  
+  .tech-tag {
+    padding: 0.4375rem 0.875rem;
+    font-size: 0.725rem;
+    min-width: 70px;
+  }
 }
 
 /* Projects Section */

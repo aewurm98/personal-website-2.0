@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { experiences, internships, skills, siteConfig } from '@/data';
+import { experiences, internships, siteConfig } from '@/data';
 
 export default function ExperienceSection() {
   return (
@@ -126,37 +126,6 @@ export default function ExperienceSection() {
             </div>
           </div>
           
-          <div className="skills-section">
-            <h3 className="fade-in delay-2">{siteConfig.sections.experience.headings.technicalSkills}</h3>
-            {['frontend', 'backend', 'database', 'devops', 'ai', 'other'].map((category) => {
-              const categorySkills = skills.filter(skill => skill.category === category);
-              if (categorySkills.length === 0) return null;
-
-              return (
-                <div key={category} className="skill-category fade-in" style={{ animationDelay: `${0.4}s` }}>
-                  <h4>{category}</h4>
-                  <div>
-                    {categorySkills.map((skill) => (
-                      <div key={skill.name} className="skill-item">
-                        <div className="skill-header">
-                          <span className="skill-name">{skill.name}</span>
-                          <span className="skill-level">
-                            {skill.proficiency >= 4 ? 'Expert' : skill.proficiency >= 3 ? 'Advanced' : 'Intermediate'}
-                          </span>
-                        </div>
-                        <div className="skill-bar">
-                          <div 
-                            className="skill-progress" 
-                            style={{ width: `${(skill.proficiency / 5) * 100}%` }}
-                          ></div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </div>
       </div>
     </section>
