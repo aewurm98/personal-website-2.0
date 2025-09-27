@@ -83,12 +83,63 @@ src/
 - Modal/dialog patterns for project details
 
 ## Development Workflow
-- Commit frequently with descriptive messages
-- Run linting before commits
-- Test mobile responsiveness on actual devices
-- Validate forms and error states
-- Check performance with Lighthouse
-- Verify cross-browser compatibility
+- Start with `npm run dev` for local development
+- Create feature branches for changes
+- Run build and type checks before committing
+- Use Vercel preview deployments for testing
+- Monitor analytics after production deploys
+- Follow git commit message conventions
+
+## Local Server Management
+- Check server status:
+  ```bash
+  # Show process using port 3000
+  lsof -i :3000
+  
+  # Show all Next.js processes
+  ps aux | grep "next dev"
+  ```
+- Stop development server:
+  ```bash
+  # Kill by PID
+  kill -9 <PID>
+  
+  # Kill by port
+  npx kill-port 3000
+  
+  # Kill all Next.js processes
+  ps aux | grep "next dev" | grep -v grep | awk '{print $2}' | xargs kill -9
+  ```
+- Restart server:
+  ```bash
+  # Clean start
+  npm run dev
+  ```
+
+## Deployment Process
+- Never commit directly to main branch
+- Always create feature branches
+- Run pre-commit checks:
+  ```bash
+  npm run build
+  npx tsc --noEmit
+  npm run lint
+  ```
+- Push to trigger preview deployment
+- Test on preview URL before merging
+- Merge to main for production deploy
+- Verify changes in production
+
+## DNS Configuration
+- Main domain: Vercel DNS records
+  ```
+  A     @     216.198.79.1
+  CNAME  www   [vercel-dns-value]
+  ```
+- Legacy site: GitHub Pages
+  ```
+  CNAME  v1    aewurm98.github.io
+  ```
 
 ## Security & Best Practices
 - Environment variables for API keys
@@ -96,3 +147,5 @@ src/
 - HTTPS in production
 - CSP headers for security
 - No sensitive data in client-side code
+- Regular dependency updates
+- Monitor Vercel analytics and errors

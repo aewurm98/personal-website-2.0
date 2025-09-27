@@ -53,9 +53,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <meta name="apple-mobile-web-app-title" content="alexwurm" />
+        <link rel="icon" href="/favicon.ico?v=3" />
+        <link rel="icon" type="image/svg+xml" href="/icon.svg?v=3" />
+        <link rel="manifest" href="/manifest.json?v=3" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <Navigation />

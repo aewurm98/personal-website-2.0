@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Website
 
-## Getting Started
+My personal portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Live at [alexwurm.com](https://alexwurm.com).
 
-First, run the development server:
+## Development Workflow
+
+### Local Server Management
 
 ```bash
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Check for running Next.js processes
+lsof -i :3000                    # Show process using port 3000
+ps aux | grep "next dev"         # Show all Next.js processes
+
+# Stop development server (several options)
+kill -9 <PID>                    # Kill specific process by PID
+npx kill-port 3000              # Kill anything on port 3000
+killall node                    # Kill all Node processes (use with caution)
+
+# Force kill all Next.js processes
+ps aux | grep "next dev" | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Pre-Commit Checks
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Build locally to catch errors
+npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Run type checking
+npx tsc --noEmit
 
-## Learn More
+# Run linting
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Git Workflow
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Create feature branch
+git checkout -b feature/your-feature-name
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Make commits
+git add .
+git commit -m "descriptive message"
 
-## Deploy on Vercel
+# Push to GitHub
+git push origin feature/your-feature-name
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Deployment Process
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Preview Deployments**:
+   - Push to any branch triggers a Vercel preview deployment
+   - Each PR gets a unique preview URL
+   - Test changes on preview before merging
+
+2. **Production Deployment**:
+   - Merge feature branch to main
+   - Vercel automatically deploys to production
+   - Verify changes on production site
+
+3. **Post-Deployment Checks**:
+   - Test on multiple devices/browsers
+   - Check Vercel Analytics for performance
+   - Monitor for errors in Vercel dashboard
+
+### DNS Configuration
+
+The website uses multiple domains:
+- `alexwurm.com` - Main site (Vercel)
+- `www.alexwurm.com` - Main site alias (Vercel)
+- `v1.alexwurm.com` - Original version (GitHub Pages)
+
+Required DNS Records:
+```
+A     @     216.198.79.1
+CNAME  www   [vercel-dns-value]
+CNAME  v1    aewurm98.github.io
+```
+
+## Tech Stack
+
+- Next.js 14 with App Router
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- EmailJS for contact form
+
+## Project Structure
+
+```
+src/
+├── app/             # Next.js App Router pages
+├── components/      # React components
+│   ├── ui/         # Reusable UI components
+│   ├── sections/   # Page sections
+│   └── layout/     # Navigation, footer
+├── lib/            # Utilities, configurations
+├── types/          # TypeScript definitions
+└── data/          # Content data files
+```
+
+## Environment Variables
+
+Required environment variables in `.env.local`:
+```
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+## Best Practices
+
+1. Always test locally first
+2. Use feature branches, never commit directly to main
+3. Take advantage of preview deployments
+4. Check build output before pushing
+5. Monitor production analytics
+
+## License
+
+MIT © Alex Wurm
