@@ -16,7 +16,6 @@ const proficiencyToWidth = {
   'Expert': '100%'
 };
 
-
 export default function SkillBar({ name, proficiency, animate }: SkillBarProps) {
   return (
     <div className="skill-item">
@@ -28,7 +27,7 @@ export default function SkillBar({ name, proficiency, animate }: SkillBarProps) 
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: animate ? proficiencyToWidth[proficiency] : 0 }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="skill-progress"
         />
       </div>

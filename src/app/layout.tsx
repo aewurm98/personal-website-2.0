@@ -9,6 +9,7 @@ import { generateMetaTags } from '@/lib/utils';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   ...generateMetaTags(
     siteConfig.title,
     siteConfig.description,

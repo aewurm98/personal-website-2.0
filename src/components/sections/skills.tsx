@@ -17,19 +17,19 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05,
-      duration: 0.3
+      duration: 0.5,
+      staggerChildren: 0.2
     }
   }
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.3
+      duration: 0.5
     }
   }
 };
@@ -43,8 +43,8 @@ export default function Skills() {
   return (
     <section ref={ref} className="skills-section">
       <div className="container">
-        <div className="section-title fade-in">Technical Skills</div>
-        <div className="section-subtitle fade-in delay-1">
+        <div className="section-title">Technical Skills</div>
+        <div className="section-subtitle">
           My expertise across different domains
         </div>
 
@@ -62,7 +62,6 @@ export default function Skills() {
             >
               <h3 className="text-xl font-semibold mb-6">{categoryTitles[category]}</h3>
               <div>
-                {/* Skill Bars Section */}
                 <div className="space-y-4 mb-6">
                   {skills
                     .filter((skill) => skill.category === category)
@@ -76,7 +75,6 @@ export default function Skills() {
                     ))}
                 </div>
                 
-                {/* Tools Section */}
                 <div className="mt-8">
                   <h4 className="text-sm font-medium text-gray-600 mb-3">Tools & Technologies</h4>
                   <div className="tools-grid">
@@ -87,12 +85,13 @@ export default function Skills() {
                         index === self.findIndex((t) => t.name === tool.name)
                       )
                       .map((tool) => (
-                        <span
+                        <motion.span
                           key={tool.name}
+                          variants={itemVariants}
                           className="tech-tag"
                         >
                           {tool.name}
-                        </span>
+                        </motion.span>
                       ))}
                   </div>
                 </div>
