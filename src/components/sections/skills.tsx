@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { skills } from '@/data';
 import SkillBar from '@/components/ui/skill-bar';
-import ToolBadges from '@/components/ui/tool-badge';
 import { useIntersection } from '@/hooks/use-intersection';
 
 const categories = ['finance', 'operations', 'development'] as const;
