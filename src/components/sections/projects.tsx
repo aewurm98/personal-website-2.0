@@ -3,6 +3,7 @@
 import { projects, siteConfig } from '@/data';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -48,7 +49,19 @@ export default function ProjectsSection() {
               style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
               <div className="project-image">
-                <span>{project.title.charAt(0)}</span>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={800}
+                  height={450}
+                  className="project-thumbnail"
+                  style={{ 
+                    objectFit: 'contain',
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgb(243 244 246)'
+                  }}
+                />
                 {project.featured && (
                   <div className="project-featured">Featured</div>
                 )}

@@ -217,9 +217,9 @@ export const experiences: Experience[] = [
     endDate: 'August 2025',
     current: false,
     description: [
-      'Evaluated 30+ enterprise software companies across healthcare IT, fintech, and vertical SaaS sectors',
-      'Built financial models and conducted market research to assess investment opportunities',
-      'Developed investment theses and presented findings to investment committee'
+      'Diligenced 30+ enterprise software companies and closed 4 transactions from $10M - $100M',
+      'Advised 5 portfolio company boards on product, go-to-market strategy and org design',
+      'Ran 100s of customer interviews, benchmarking exercises and finanial models to evaluate investment opportunities'
     ],
     technologies: ['Financial Modeling', 'Market Research', 'Due Diligence', 'Investment Analysis']
   },
@@ -234,9 +234,9 @@ export const experiences: Experience[] = [
     endDate: 'March 2023',
     current: false,
     description: [
-      'Led product strategy and development for B2B SaaS platform serving 500+ enterprise clients',
-      'Managed 4-person product team to launch new features increasing revenue by 40%',
-      'Implemented analytics infrastructure to track key metrics and inform product decisions'
+      'Led product & growth strategy for B2B SaaS platform serving 500+ enterprise clients',
+      'Managed 9-person cross-functional team to launch new product features, build sales pipeline and manage client relationships',
+      'Owned $1M+/yr P&L and managed technical projects involving engineering, QA and marketing'
     ],
     technologies: ['Product Strategy', 'Team Leadership', 'Analytics', 'SaaS']
   },
@@ -251,9 +251,9 @@ export const experiences: Experience[] = [
     endDate: 'August 2022',
     current: false,
     description: [
-      'Advised Fortune 500 clients on digital transformation and growth strategy initiatives',
-      'Built financial models and conducted market research for $2B+ M&A transactions',
-      'Developed data analytics tools to automate reporting and improve decision-making'
+      'Advised Fortune 500 clients on agile growth methods and innovation strategies',
+      'Partnered with stakeholders across business units to deliver $100Ms in operating efficiencies',
+      'Developed data analytics products to enhance client decision-making'
     ],
     technologies: ['Strategy Consulting', 'Financial Analysis', 'Data Analytics', 'Project Management']
   }
@@ -387,54 +387,52 @@ export const skills: Skill[] = [
 export const projects: Project[] = [
   {
     id: '1',
-    slug: 'ai-chat-assistant',
-    title: 'AI Chat Assistant',
-    description: 'Intelligent chatbot powered by transformer models with real-time conversation capabilities.',
-    longDescription: `A sophisticated AI chat assistant that leverages state-of-the-art transformer models 
-    to provide intelligent, context-aware responses. Features include real-time conversation processing, 
-    sentiment analysis, and multi-language support. The system is built with a microservices architecture 
-    ensuring scalability and reliability.`,
-    image: '/images/projects/ai-chat.jpg',
-    technologies: ['Python', 'PyTorch', 'React', 'Node.js', 'PostgreSQL', 'Docker'],
-    category: 'ai',
-    githubUrl: 'https://github.com/aewurm98/ai-chat-assistant',
-    liveUrl: 'https://ai-chat.alexwurm.com',
-    featured: true,
-    date: '2024-03'
+    slug: 'old-website',
+    title: 'Previous Version of my Website',
+    description: 'Original ReactJS website built based on learnings from The Odin Project.',
+    longDescription: `As a Product Manager at Voyage, I wanted to develop full-stack development skills 
+    to better engage with the engineering team. I taught myself HTML/CSS, Javascript and ReactJS to build a personal website where I
+    could showcase future projects and continue upskilling.`,
+    image: '/images/projects/react_website_development_stock_photo.jpg',
+    technologies: ['HTML/CSS', 'Javascript', 'React', 'git'],
+    category: 'web',
+    githubUrl: 'https://github.com/aewurm98/alex_wurm_personal_website_1.0',
+    liveUrl: 'https://v1.alexwurm.com/',
+    featured: false,
+    date: '2022-04'
   },
   {
     id: '2',
-    slug: 'ecommerce-platform',
-    title: 'E-commerce Platform',
+    slug: 'sports-statistics',
+    title: 'NBA Stats in Python',
     description: 'Full-stack e-commerce solution with advanced features and modern UI.',
-    longDescription: `A comprehensive e-commerce platform built with modern web technologies. 
-    Features include user authentication, product management, shopping cart functionality, 
-    payment processing, and admin dashboard. The platform is optimized for performance 
-    and includes advanced features like real-time inventory tracking and analytics.`,
-    image: '/images/projects/ecommerce.jpg',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe', 'PostgreSQL', 'AWS'],
-    category: 'web',
+    longDescription: `A longtime fan of the NBA and a data nerd, I decided to use the 
+    python programming skills I was working on while at Voyage to analyze NBA team and 
+    player statistics.`,
+     image: '/images/projects/nba_players_stock_photo.jpeg',
+    technologies: ['Python', 'BeautifulSoup', 'Pandas', 'Jupyter','scikit-learn'],
+    category: 'data',
     githubUrl: 'https://github.com/aewurm98/ecommerce-platform',
-    liveUrl: 'https://ecommerce.alexwurm.com',
+    
     featured: true,
-    date: '2024-01'
+    date: '2022-07'
   },
   {
     id: '3',
-    slug: 'data-visualization-dashboard',
-    title: 'Data Visualization Dashboard',
-    description: 'Interactive dashboard for real-time data visualization and analytics.',
-    longDescription: `An interactive data visualization dashboard that provides real-time insights 
-    through dynamic charts and graphs. The dashboard supports multiple data sources, 
-    custom filtering, and export capabilities. Built with D3.js for advanced visualizations 
-    and real-time data streaming capabilities.`,
-    image: '/images/projects/dashboard.jpg',
-    technologies: ['React', 'D3.js', 'Node.js', 'Socket.io', 'MongoDB', 'Docker'],
-    category: 'data',
-    githubUrl: 'https://github.com/aewurm98/data-dashboard',
-    liveUrl: 'https://dashboard.alexwurm.com',
-    featured: false,
-    date: '2023-11'
+    slug: 'kaytoo-app',
+    title: 'Kaytoo, Inc.',
+    description: 'NLP-based habit-building and accountability mobileapp.',
+    longDescription: `During COVID lockdown, I worked with two college friends to build
+    a habit-building and accountability app. Before the popularization of ChatGPT and 
+    LLMs, we investigate Natural Language Processing as a tool to improve personalized
+    goal and tactic suggestions.`,
+     image: '/images/projects/kaytoo_mockups.png',
+    technologies: ['HTML/CSS', 'SwiftUI', 'Notion', 'InVision', 'HuggingFace'],
+    category: 'mobile',
+    githubUrl: 'https://github.com/aewurm98/kaytoo-app.github.io',
+    liveUrl: 'https://kaytoo.alexwurm.com/',
+    featured: true,
+    date: '2021-09'
   },
   {
     id: '4',
