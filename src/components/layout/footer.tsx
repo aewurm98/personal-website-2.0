@@ -14,10 +14,10 @@ export default function Footer() {
         <div className="footer-section fade-in delay-1">
           <h4>Quick Links</h4>
           <ul className="footer-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#experience">Experience</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/#contact">Contact</a></li>
           </ul>
         </div>
         

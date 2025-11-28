@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,37 +17,29 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/#home' },
+    { name: 'About', href: '/#about' },
+    { name: 'Experience', href: '/#experience' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'Contact', href: '/#contact' }
   ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <nav className={isScrolled ? 'scrolled' : ''}>
       <div className="nav-content">
         <div className="logo">
-          <button onClick={() => scrollToSection('#home')}>AW</button>
+          <Link href="/">AW</Link>
         </div>
         
         <div className="nav-links">
           {navItems.map((item) => (
-            <button
+            <Link
               key={item.name}
-              onClick={() => scrollToSection(item.href)}
+              href={item.href}
               className="nav-link"
             >
               {item.name}
-            </button>
+            </Link>
           ))}
         </div>
         
@@ -65,13 +58,14 @@ export default function Navigation() {
       {isMobileMenuOpen && (
         <div className="mobile-nav">
           {navItems.map((item) => (
-            <button
+            <Link
               key={item.name}
-              onClick={() => scrollToSection(item.href)}
+              href={item.href}
               className="mobile-nav-link"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.name}
-            </button>
+            </Link>
           ))}
         </div>
       )}

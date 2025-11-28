@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Basic Reset */
 * {
   margin: 0;
@@ -54,6 +58,13 @@ nav.scrolled {
 }
 
 .logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.logo a {
   font-size: 1.25rem;
   font-weight: bold;
   color: #2563eb;
@@ -1113,15 +1124,25 @@ nav.scrolled {
 }
 
 .project-featured {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
   background: #2563eb;
   color: white;
   padding: 0.125rem 0.5rem;
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.project-category {
+  background: #fbbf24;
+  color: #000000;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  width: fit-content;
+  white-space: nowrap;
 }
 
 .project-content {
@@ -1767,5 +1788,210 @@ footer {
   .internship-timeline-item {
     margin-bottom: 0;
   }
+}
+
+/* Project Detail Page */
+.project-detail-header {
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  padding-top: 5rem; /* Clear fixed nav */
+}
+
+.project-detail-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.project-detail-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .project-detail-title {
+    font-size: 2.5rem;
+  }
+}
+
+.project-detail-description {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 42rem;
+}
+
+.project-detail-header-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .project-detail-header-flex {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.project-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.project-detail-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .project-detail-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.project-detail-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-detail-image {
+  position: relative;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.project-detail-section {
+  margin-bottom: 2rem;
+}
+
+.project-detail-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.project-detail-section p {
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.project-detail-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .project-detail-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-detail-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-detail-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+.project-detail-feature-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #2563eb;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.project-detail-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-detail-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.project-detail-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.project-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-detail-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.project-detail-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-detail-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-detail-link-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  color: #2563eb;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  transition: background 0.2s ease;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.project-detail-link-item:hover {
+  background: #f3f4f6;
+}
+
+.project-detail-link-icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
