@@ -6,11 +6,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function ProjectsSection() {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('featured');
 
   const categories = [
-    { id: 'all', name: 'All Projects' },
-    { id: 'featured', name: 'Featured' }
+    { id: 'featured', name: 'Featured' },
+    { id: 'all', name: 'All Projects' }
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -64,6 +64,9 @@ export default function ProjectsSection() {
                 <div style={{ position: 'absolute', top: '1rem', left: '1rem', display: 'flex', flexDirection: 'row', gap: '0.5rem' }}>
                   {project.featured && (
                     <div className="project-featured">Featured</div>
+                  )}
+                  {project.status === 'in-progress' && (
+                    <div className="project-in-progress">In Progress</div>
                   )}
                   <div className="project-category">
                     {project.category === 'web' && 'Web'}

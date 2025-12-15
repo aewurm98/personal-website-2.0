@@ -35,7 +35,7 @@ export const siteConfig: SiteConfig = {
       }
     },
     projects: {
-      title: 'Featured Projects',
+      title: 'Projects',
       subtitle: 'A selection of personal project I have worked on.',
       categories: {
         all: 'All Projects',
@@ -436,53 +436,51 @@ export const projects: Project[] = [
   },
   {
     id: '4',
-    slug: 'mobile-fitness-app',
-    title: 'Fitness Tracking App',
-    description: 'Cross-platform mobile app for fitness tracking and workout planning.',
-    longDescription: `A comprehensive fitness tracking mobile application built with React Native. 
-    Features include workout planning, progress tracking, nutrition logging, and social features. 
-    The app integrates with wearable devices and provides personalized recommendations 
-    based on user data and goals.`,
-    image: '/images/projects/fitness-app.jpg',
-    technologies: ['React Native', 'TypeScript', 'Firebase', 'Redux', 'Expo', 'Node.js'],
-    category: 'mobile',
-    githubUrl: 'https://github.com/aewurm98/fitness-app',
-    liveUrl: 'https://fitness.alexwurm.com',
-    featured: false,
-    date: '2023-08'
+    slug: 'github-rag',
+    title: 'GitHub RAG Chat',
+    description: 'AI-powered chat interface for exploring GitHub repositories using RAG.',
+    longDescription: `An intelligent chat application that uses Retrieval-Augmented Generation (RAG) 
+    to help users explore and understand GitHub repositories. Built with Lovable, this tool allows 
+    you to have natural conversations about codebases, ask questions about implementation details, 
+    and get contextual answers powered by AI.`,
+    image: '/images/projects/github-project-image.png',
+    technologies: ['React', 'TypeScript', 'Lovable', 'RAG', 'OpenAI', 'Supabase'],
+    category: 'ai',
+    githubUrl: 'https://github.com/aewurm98/github-rag-chat',
+    liveUrl: 'https://github-rag.alexwurm.com/',
+    featured: true,
+    date: '2025-11'
   },
   {
     id: '5',
-    slug: 'machine-learning-pipeline',
-    title: 'ML Pipeline Framework',
-    description: 'Automated machine learning pipeline for model training and deployment.',
-    longDescription: `A comprehensive machine learning pipeline framework that automates the entire 
-    ML workflow from data preprocessing to model deployment. Features include automated 
-    hyperparameter tuning, model versioning, A/B testing capabilities, and monitoring. 
-    Built with scalability and reproducibility in mind.`,
-    image: '/images/projects/ml-pipeline.jpg',
-    technologies: ['Python', 'TensorFlow', 'Kubernetes', 'Airflow', 'MLflow', 'Docker'],
-    category: 'ai',
-    githubUrl: 'https://github.com/aewurm98/ml-pipeline',
-    liveUrl: 'https://ml-pipeline.alexwurm.com',
-    featured: true,
-    date: '2023-06'
+    slug: 'job-app-suite',
+    title: 'Job App Suite',
+    description: 'AI-powered job application toolkit with dashboard tracking and tailored content generation.',
+    longDescription: `A comprehensive job application management platform designed to streamline the job search process. 
+    Features include application tracking dashboards, resume and cover letter storage, AI-powered content generation 
+    for tailored applications, and progress analytics to optimize your job search strategy.`,
+    image: '/images/projects/job-app-suite.jpg',
+    technologies: ['React', 'TypeScript', 'Supabase', 'OpenAI', 'Tailwind CSS'],
+    category: 'web',
+    githubUrl: 'https://github.com/aewurm98/job-app-suite',
+    featured: false,
+    status: 'in-progress',
+    date: '2025-01'
   },
   {
     id: '6',
-    slug: 'task-management-system',
-    title: 'Task Management System',
-    description: 'Collaborative task management platform with real-time updates.',
-    longDescription: `A collaborative task management system designed for teams and organizations. 
-    Features include real-time collaboration, task assignment, progress tracking, 
-    file sharing, and comprehensive reporting. The platform supports multiple project 
-    types and integrates with popular productivity tools.`,
-    image: '/images/projects/task-management.jpg',
-    technologies: ['Vue.js', 'Node.js', 'Socket.io', 'PostgreSQL', 'Redis', 'AWS'],
-    category: 'web',
-    githubUrl: 'https://github.com/aewurm98/task-management',
-    liveUrl: 'https://tasks.alexwurm.com',
+    slug: 'skiconnect',
+    title: 'SkiConnect',
+    description: 'Social ski trip planning app with trail maps, conditions tracking, and group coordination.',
+    longDescription: `A social application for planning ski trips with friends. Integrates real-time location data 
+    with trail maps and snow conditions, coordinates group logistics through calendar invites, and helps 
+    friends find each other on the mountain. Built for skiers who want to maximize their time on the slopes.`,
+    image: '/images/projects/skiconnect.png',
+    technologies: ['React Native', 'TypeScript', 'Supabase', 'MapBox', 'Weather API'],
+    category: 'mobile',
+    githubUrl: 'https://github.com/aewurm98/skiconnect',
     featured: false,
-    date: '2023-04'
+    status: 'in-progress',
+    date: '2025-01'
   }
 ];

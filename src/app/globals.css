@@ -1145,6 +1145,17 @@ nav.scrolled {
   white-space: nowrap;
 }
 
+.project-in-progress {
+  background: #f97316;
+  color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  width: fit-content;
+  white-space: nowrap;
+}
+
 .project-content {
   padding: 1.5rem;
 }
@@ -1993,5 +2004,16 @@ footer {
   flex-shrink: 0;
   width: 1.25rem;
   height: 1.25rem;
+}
+
+.project-status-banner {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #c2410c;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 

@@ -11,6 +11,7 @@ export interface Project {
   liveUrl?: string;
   featured: boolean;
   date: string;
+  status?: 'completed' | 'in-progress' | 'planned';
 }
 
 export interface Experience {

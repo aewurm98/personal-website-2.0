@@ -35,6 +35,12 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               <ArrowLeft className="project-detail-link-icon" />
               <span>Back to Projects</span>
             </Link>
+
+            {project.status === 'in-progress' && (
+              <div className="project-status-banner">
+                <span>🚧 This project is currently in development</span>
+              </div>
+            )}
             
             <div className="project-detail-header-flex" style={{ marginTop: '1rem' }}>
               <div>
@@ -139,8 +145,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                     borderRadius: '50%',
                     background: '#2563eb'
                   }} />
-                  <span style={{ textTransform: 'capitalize' }}>
-                    {project.category} Project
+                  <span>
+                    {project.category === 'web' && 'Web'}
+                    {project.category === 'mobile' && 'Mobile'}
+                    {project.category === 'ai' && 'AI/ML'}
+                    {project.category === 'data' && 'Data'}
+                    {project.category === 'other' && 'Other'}
+                    {' '}Project
                   </span>
                 </div>
               </div>
