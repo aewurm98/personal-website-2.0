@@ -1913,11 +1913,6 @@ footer {
   }
 }
 
-@media (min-width: 1024px) {
-  .project-detail-features {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 .project-detail-feature {
   display: flex;

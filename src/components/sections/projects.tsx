@@ -62,9 +62,9 @@ export default function ProjectsSection() {
                   }}
                 />
                 <div style={{ position: 'absolute', top: '1rem', left: '1rem', display: 'flex', flexDirection: 'row', gap: '0.5rem' }}>
-                  {project.featured && (
-                    <div className="project-featured">Featured</div>
-                  )}
+                {project.featured && (
+                  <div className="project-featured">Featured</div>
+                )}
                   {project.status === 'in-progress' && (
                     <div className="project-in-progress">In Progress</div>
                   )}

@@ -217,11 +217,11 @@ export const experiences: Experience[] = [
     endDate: 'August 2025',
     current: false,
     description: [
-      'Diligenced 30+ enterprise software companies and closed 4 transactions from $10M - $100M',
+      'Led diligence on 25+ enterprise software companies and closed 4 transactions from $10M - $100M',
       'Advised 5 portfolio company boards on product, go-to-market strategy and org design',
-      'Ran 100s of customer interviews, benchmarking exercises and finanial models to evaluate investment opportunities'
+      'Ran 100s of customer interviews, benchmarking exercises and financial models to evaluate investment opportunities'
     ],
-    technologies: ['Financial Modeling', 'Market Research', 'Due Diligence', 'Investment Analysis']
+    technologies: ['Financial Modeling', 'Market Research', 'Private Equity Diligence', 'Corporate Valuation', 'Deal Sourcing', 'M&A']
   },
   {
     id: '2',
@@ -234,11 +234,11 @@ export const experiences: Experience[] = [
     endDate: 'March 2023',
     current: false,
     description: [
-      'Led product & growth strategy for B2B SaaS platform serving 500+ enterprise clients',
+      'Led product & growth strategy for B2B SaaS platform serving 400+ enterprise clients',
       'Managed 9-person cross-functional team to launch new product features, build sales pipeline and manage client relationships',
       'Owned $1M+/yr P&L and managed technical projects involving engineering, QA and marketing'
     ],
-    technologies: ['Product Strategy', 'Team Leadership', 'Analytics', 'SaaS']
+    technologies: ['Product Strategy', 'Management', 'Performance Marketing', 'Revenue Operations', 'Data Analysis']
   },
   {
     id: '3',
@@ -252,10 +252,10 @@ export const experiences: Experience[] = [
     current: false,
     description: [
       'Advised Fortune 500 clients on agile growth methods and innovation strategies',
-      'Partnered with stakeholders across business units to deliver $100Ms in operating efficiencies',
-      'Developed data analytics products to enhance client decision-making'
+      'Conducted 15+ commercial due diligences and catalyzed two $5B+ SaaS private equity acquisitions',
+      'Developed BI products to enhance client decision-making and capture $100Ms in operating efficiencies'
     ],
-    technologies: ['Strategy Consulting', 'Financial Analysis', 'Data Analytics', 'Project Management']
+    technologies: ['Strategy Consulting', 'Financial Analysis', 'Project Management', 'Business Operations']
   }
 ];
 
@@ -389,7 +389,7 @@ export const projects: Project[] = [
     id: '1',
     slug: 'old-website',
     title: 'Previous Version of my Website',
-    description: 'Original ReactJS website built based on learnings from The Odin Project.',
+    description: 'Original website built based on learnings from The Odin Project.',
     longDescription: `As a Product Manager at Voyage, I wanted to develop full-stack development skills 
     to better engage with the engineering team. I taught myself HTML/CSS, Javascript and ReactJS to build a personal website where I
     could showcase future projects and continue upskilling.`,
@@ -399,29 +399,45 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/aewurm98/alex_wurm_personal_website_1.0',
     liveUrl: 'https://v1.alexwurm.com/',
     featured: false,
-    date: '2022-04'
+    date: '2022-04-15',
+    features: [
+      'Responsive design',
+      'Interactive UI',
+      'Custom CSS',
+      'GitHub Pages ',
+      'React components',
+      'Git version control'
+    ]
   },
   {
     id: '2',
     slug: 'sports-statistics',
     title: 'NBA Stats in Python',
-    description: 'Full-stack e-commerce solution with advanced features and modern UI.',
+    description: 'Advanced analytics and machine learning exercises on NBA team and player data.',
     longDescription: `A longtime fan of the NBA and a data nerd, I decided to use the 
     python programming skills I was working on while at Voyage to analyze NBA team and 
     player statistics.`,
      image: '/images/projects/nba_players_stock_photo.jpeg',
     technologies: ['Python', 'BeautifulSoup', 'Pandas', 'Jupyter','scikit-learn'],
     category: 'data',
-    githubUrl: 'https://github.com/aewurm98/ecommerce-platform',
+    githubUrl: 'https://github.com/aewurm98/alex_wurm_nba_stats_with_python',
     
     featured: true,
-    date: '2022-07'
+    date: '2022-07-15',
+    features: [
+      'Web scraping',
+      'Pandas data analysis',
+      'ML with scikit-learn',
+      'Jupyter notebooks',
+      'Statistical modeling',
+      'Data visualization'
+    ]
   },
   {
     id: '3',
     slug: 'kaytoo-app',
     title: 'Kaytoo, Inc.',
-    description: 'NLP-based habit-building and accountability mobileapp.',
+    description: 'NLP-based habit-building and accountability mobile app.',
     longDescription: `During COVID lockdown, I worked with two college friends to build
     a habit-building and accountability app. Before the popularization of ChatGPT and 
     LLMs, we investigate Natural Language Processing as a tool to improve personalized
@@ -432,7 +448,15 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/aewurm98/kaytoo-app.github.io',
     liveUrl: 'https://kaytoo.alexwurm.com/',
     featured: true,
-    date: '2021-09'
+    date: '2021-09-15',
+    features: [
+      'NLP-powered suggestions',
+      'Habit tracking dashboard',
+      'User authentication',
+      'Push notifications',
+      'Progress analytics',
+      'Social features'
+    ]
   },
   {
     id: '4',
@@ -449,7 +473,15 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/aewurm98/github-rag-chat',
     liveUrl: 'https://github-rag.alexwurm.com/',
     featured: true,
-    date: '2025-11'
+    date: '2025-11-15',
+    features: [
+      'RAG-powered exploration',
+      'Natural language queries',
+      'Context-aware responses',
+      'Repository indexing',
+      'Real-time chat interface',
+      'Supabase vector storage'
+    ]
   },
   {
     id: '5',
@@ -462,10 +494,17 @@ export const projects: Project[] = [
     image: '/images/projects/job-app-suite.jpg',
     technologies: ['React', 'TypeScript', 'Supabase', 'OpenAI', 'Tailwind CSS'],
     category: 'web',
-    githubUrl: 'https://github.com/aewurm98/job-app-suite',
     featured: false,
     status: 'in-progress',
-    date: '2025-01'
+    date: '2026-01-15',
+    features: [
+      'App tracking dashboard',
+      'Resume + cover letter storage',
+      'AI-powered content generation',
+      'Progress analytics',
+      'Job posting integration',
+      'Tailored app suggestions'
+    ]
   },
   {
     id: '6',
@@ -478,9 +517,16 @@ export const projects: Project[] = [
     image: '/images/projects/skiconnect.png',
     technologies: ['React Native', 'TypeScript', 'Supabase', 'MapBox', 'Weather API'],
     category: 'mobile',
-    githubUrl: 'https://github.com/aewurm98/skiconnect',
     featured: false,
     status: 'in-progress',
-    date: '2025-01'
+    date: '2026-01-15',
+    features: [
+      'Real-time location tracking',
+      'Interactive trail maps',
+      'Live snow conditions',
+      'Group coordination tools',
+      'Calendar integration',
+      'Friend finder on mountain'
+    ]
   }
 ];

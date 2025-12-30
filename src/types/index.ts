@@ -12,6 +12,7 @@ export interface Project {
   featured: boolean;
   date: string;
   status?: 'completed' | 'in-progress' | 'planned';
+  features?: string[];
 }
 
 export interface Experience {

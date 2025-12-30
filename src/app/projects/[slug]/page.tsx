@@ -93,14 +93,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <div className="project-detail-section">
               <h2>Key Features</h2>
               <div className="project-detail-features">
-                {[
-                  'Responsive Design',
-                  'Modern UI/UX',
-                  'Performance Optimized',
-                  'SEO Friendly',
-                  'Cross-browser Compatible',
-                  'Accessibility Compliant'
-                ].map((feature, index) => (
+                {(project.features || []).map((feature, index) => (
                   <motion.div
                     key={feature}
                     className="project-detail-feature"
