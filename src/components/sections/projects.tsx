@@ -13,11 +13,15 @@ export default function ProjectsSection() {
     { id: 'all', name: 'All Projects' }
   ];
 
+  const sortedProjects = [...projects].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
   const filteredProjects = activeFilter === 'all' 
-    ? projects 
+    ? sortedProjects 
     : activeFilter === 'featured'
-    ? projects.filter(project => project.featured)
-    : projects.filter(project => project.category === activeFilter);
+    ? sortedProjects.filter(project => project.featured)
+    : sortedProjects.filter(project => project.category === activeFilter);
 
   return (
     <section id="projects" className="section projects">

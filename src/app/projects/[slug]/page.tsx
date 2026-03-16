@@ -87,6 +87,25 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <div className="project-detail-section">
               <h2>About This Project</h2>
               <p>{project.longDescription}</p>
+
+              {project.slug === 'litera-ai' && (
+                <>
+                  <p style={{ marginTop: '0.75rem' }}>
+                    Patient demo experience:{' '}
+                    <a
+                      href="https://patient-connect.replit.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      https://patient-connect.replit.app
+                    </a>
+                  </p>
+                  <p style={{ marginTop: '0.5rem' }}>
+                    Demo login credentials: <strong>riverside_admin</strong> / <strong>Password123!</strong>
+                  </p>
+                </>
+              )}
+              
             </div>
 
             {/* Features */}

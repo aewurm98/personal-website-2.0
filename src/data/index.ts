@@ -447,7 +447,7 @@ export const projects: Project[] = [
     category: 'mobile',
     githubUrl: 'https://github.com/aewurm98/kaytoo-app.github.io',
     liveUrl: 'https://kaytoo.alexwurm.com/',
-    featured: true,
+    featured: false,
     date: '2021-09-15',
     features: [
       'NLP-powered suggestions',
@@ -527,6 +527,29 @@ export const projects: Project[] = [
       'Group coordination tools',
       'Calendar integration',
       'Friend finder on mountain'
+    ]
+  },
+  {
+    id: '7',
+    slug: 'litera-ai',
+    title: 'Litera.ai',
+    description: 'AI-powered patient discharge and care coordination platform.',
+    longDescription: `Litera is a post-discharge care companion that turns complex discharge instructions into a clear, multilingual action plan patients can follow. It structures medications, follow-up appointments, and warning signs into an accessible experience that patients and caregivers can replay, share, and confirm they understood. A companion demo experience is available via Replit at https://patient-connect.replit.app.`,
+    image: '/images/projects/litera-logo.png',
+    technologies: ['Node.js', 'Supabase', 'OpenAI', 'Resend', 'Replit'],
+    category: 'ai',
+    githubUrl: 'https://github.com/aewurm98/litera-ai',
+    liveUrl: 'https://literahealth.tech/',
+    featured: true,
+    status: 'completed',
+    date: '2026-03-16',
+    features: [
+      'AI-powered discharge simplification',
+      'Multimodal patient portal',
+      'Follow-up appointment scheduling',
+      'Personalized RAG chatbot',
+      'Smart medication reminders',
+      'Caregiver-shareable patient plans'
     ]
   }
 ];
